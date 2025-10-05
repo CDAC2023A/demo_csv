@@ -8,7 +8,9 @@ public class CustomerDTO {
     private String customerId;
     private String name;
     private String email;
-
+    {
+        this.customerId = customerId;
+    }
     public String getCustomerId() {
         return customerId;
     }

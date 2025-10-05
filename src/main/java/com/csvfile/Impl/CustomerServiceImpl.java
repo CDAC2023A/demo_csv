@@ -1,5 +1,6 @@
 package com.csvfile.Impl;
 
+import com.csvfile.constants.CsvConstants;
 import com.csvfile.dto.CustomerDTO;
 import com.csvfile.entity.Customer;
 import com.csvfile.repositories.CustomerRepository;
@@ -54,8 +55,8 @@ public class CustomerServiceImpl implements CustomerService {
                 rowCount++;
 
                 // Max row validation
-                if (rowCount > 20) {
-                    throw new RuntimeException("CSV file should not contain more than 20 rows.");
+                if (rowCount > CsvConstants.MAX_ROWS) {
+                    throw new RuntimeException("CSV file should not contain more than " + CsvConstants.MAX_ROWS + " rows.");
                 }
 
                 if (line.length < 3) continue; // skip incomplete rows
